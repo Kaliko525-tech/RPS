@@ -84,7 +84,9 @@ WOW yes that did work, we just changed the click event listeners on the buttons 
 
 no refactoring playGame for now. 
 
-2.output the score board and commentator
+2. added a div to HMTL
+
+3. output the score board and commentator
 
 so for the assignment, i believe i need to manipulate the DOM from JS, as a good practice for this, there are obviously better ways to do this. but for the assingment. 
 
@@ -131,4 +133,35 @@ needs to become this ->
 
     but im not sure where i place this, i need it to update each round, but i do not want it to add the elements each round. 
 
-    im going to try put them into the playgame function. 
+    im going to try put them into the playgame function. -> This WORKS! all of it! well done mate! 
+
+    i will now refactor the rest of the code. thats done and NO BUGS! WOOHOO!!
+
+
+4. game ends with first player to 5 points. #
+
+definitley need to refact the playGame function for this. 
+
+introduce and if else statement. 
+
+if (computerScore == 5) {
+    resultBoard.textContent = "COMPUTER WINS!
+    scoreBox.appendChild(resultBoard)
+} 
+else if (Player Score == 5 ) {
+    resultBoard.textContent = "YOU WIN!"
+} 
+else {
+
+    const humanSelection = getHumanChoice(btnChoice)
+    const computerSelection = getComputerChoice()
+
+    scoreBox.appendChild(playerScoreBoard)
+    scoreBox.appendChild(computerScoreBoard)
+    scoreBox.appendChild(resultBoard)
+    
+    playRound(humanSelection , computerSelection)
+
+}
+
+5. (BONUS?) add a reset button. 

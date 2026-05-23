@@ -12,7 +12,11 @@ choicePaper.addEventListener("click", () => playGame("paper"))
 const choiceScissors = document.querySelector("#scissors")
 choiceScissors.addEventListener("click", () => playGame("scissors"))
 
+const scoreBox = document.querySelector(".scoreBox")
 
+const playerScoreBoard = document.createElement("p")
+const computerScoreBoard = document.createElement("p")
+const resultBoard = document.createElement("p")
 
 function getComputerChoice() {
     value = Math.floor(Math.random() * 3);
@@ -43,38 +47,45 @@ function getHumanChoice(btnChoice) {
 
 function playRound(humanChoice , computerChoice) {
     if (humanChoice == "paper" && computerChoice == "Rock") {
-        console.log("Paper beats Rock! Human Wins!")
+        resultBoard.textContent = "Paper beats Rock! Human Wins!"
         humanScore = ++humanScore 
-        console.log(humanScore , computerScore , humanChoice, computerChoice)
+        playerScoreBoard.textContent = humanScore
+        computerScoreBoard.textContent = computerScore
     }
     else if (humanChoice == "rock" && computerChoice == "Scissors") {
-        console.log("Rock beats Scissors! Human Wins!")
+        resultBoard.textContent = "Rock beats Scissors! Human Wins!"
         humanScore = ++humanScore 
-        console.log(humanScore , computerScore , humanChoice, computerChoice)
+        playerScoreBoard.textContent = humanScore
+        computerScoreBoard.textContent = computerScore
     }
     else if (humanChoice == "scissors" && computerChoice == "Paper") {
-        console.log("Scissors beats Paper! Human Wins!")
+        resultBoard.textContent = "Scissors beats Paper! Human Wins!"
         humanScore = ++humanScore 
-        console.log(humanScore , computerScore , humanChoice, computerChoice)
+        playerScoreBoard.textContent = humanScore
+        computerScoreBoard.textContent = computerScore
     }
     else if (humanChoice == "rock" && computerChoice == "Paper") {
-        console.log("Rock loses to Paper! Computer Wins!")
+        resultBoard.textContent = "Rock loses to Paper! Computer Wins!"
         computerScore = ++computerScore 
-        console.log(humanScore , computerScore , humanChoice, computerChoice)
+        playerScoreBoard.textContent = humanScore
+        computerScoreBoard.textContent = computerScore
     }
     else if (humanChoice == "scissors" && computerChoice == "Rock") {
-        console.log("Scissors loses to Rock! Computer Wins!")
+        resultBoard.textContent = "Scissors loses to Rock! Computer Wins!"
         computerScore = ++computerScore 
-        console.log(humanScore , computerScore , humanChoice, computerChoice)
+        playerScoreBoard.textContent = humanScore
+        computerScoreBoard.textContent = computerScore
     }
     else if (humanChoice == "paper" && computerChoice == "Scissors") {
-        console.log("Paper loses to Scissors! Computer Wins!")
+        resultBoard.textContent = "Paper loses to Scissors! Computer Wins!"
         computerScore = ++computerScore ;
-        console.log(humanScore , computerScore , humanChoice, computerChoice)
+        playerScoreBoard.textContent = humanScore
+        computerScoreBoard.textContent = computerScore
     }
     else if (humanChoice == "paper" && computerChoice == "Paper" || humanChoice == "rock" && computerChoice == "Rock" || humanChoice == "scissors" && computerChoice == "Scissors") {
-        console.log("ITS A DRAW!")
-        console.log(humanScore , computerScore , humanChoice, computerChoice)
+        resultBoard.textContent = "ITS A DRAW!"
+        playerScoreBoard.textContent = humanScore
+        computerScoreBoard.textContent = computerScore
     }
 } 
 
@@ -85,6 +96,8 @@ function playRound(humanChoice , computerChoice) {
 function playGame(btnChoice){
     const humanSelection = getHumanChoice(btnChoice)
     const computerSelection = getComputerChoice()
-console.log(computerScore) // this works and the score is counting,
+    scoreBox.appendChild(playerScoreBoard)
+    scoreBox.appendChild(computerScoreBoard)
+    scoreBox.appendChild(resultBoard)
     playRound(humanSelection , computerSelection)
 }
