@@ -169,3 +169,11 @@ lets test this out. -> THIS WORKS! WOOHOO! PSEUDOCODE FOR THE WIN!
 although i did notice, for the winning output it only shows once i click a choice again, this could be more dynamic, that WHEN humanScore == 5 || computerScore == 5 it pushes the winner result and prevents further playing. 
 
 5. (BONUS?) add a reset button. 
+
+yes just for fun, 
+
+i think i just need it to remove appended children and reset score. 
+
+so grab the button, add and event listener, create function that removes apended children and resets score. 
+
+this works! attempted to use remove() method, but did not work. removechild() did work. 

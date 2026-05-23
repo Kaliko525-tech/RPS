@@ -114,3 +114,13 @@ else {
 
 }
 }
+
+const resetBtn = document.querySelector("#reset")
+
+resetBtn.addEventListener("click", () => {
+    scoreBox.removeChild(playerScoreBoard)
+    scoreBox.removeChild(computerScoreBoard)
+    scoreBox.removeChild(resultBoard)
+    computerScore = 0
+    humanScore = 0
+})
