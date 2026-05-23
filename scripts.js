@@ -1,7 +1,18 @@
-console.log("hello world!")
+console.log("hello from Wolverton Solutions Software!")
 
 let humanScore = 0
-    let computerScore = 0
+let computerScore = 0
+
+const choiceRock = document.querySelector("#rock")
+choiceRock.addEventListener("click", () => playGame("rock"))
+
+const choicePaper = document.querySelector("#paper")
+choicePaper.addEventListener("click", () => playGame("paper"))
+
+const choiceScissors = document.querySelector("#scissors")
+choiceScissors.addEventListener("click", () => playGame("scissors"))
+
+
 
 function getComputerChoice() {
     value = Math.floor(Math.random() * 3);
@@ -23,9 +34,10 @@ function getComputerChoice() {
     else console.log("Error")
 }
 
-function getHumanChoice() {
-    userChoice = prompt("Rock, Paper, or Scissors" , )
-   return userChoice = userChoice.toLowerCase()
+function getHumanChoice(btnChoice) {
+    userChoice = btnChoice
+    console.log(userChoice)
+   return userChoice
 }
 
 
@@ -70,15 +82,9 @@ function playRound(humanChoice , computerChoice) {
 
 
 
-function playGame(){
-    const humanSelection = getHumanChoice()
+function playGame(btnChoice){
+    const humanSelection = getHumanChoice(btnChoice)
     const computerSelection = getComputerChoice()
-
+console.log(computerScore) // this works and the score is counting,
     playRound(humanSelection , computerSelection)
 }
-
-playGame()
-playGame()
-playGame()
-playGame()
-playGame()
