@@ -49,43 +49,43 @@ function playRound(humanChoice , computerChoice) {
     if (humanChoice == "paper" && computerChoice == "Rock") {
         resultBoard.textContent = "Paper beats Rock! Human Wins!"
         humanScore = ++humanScore 
-        playerScoreBoard.textContent = humanScore
-        computerScoreBoard.textContent = computerScore
+        playerScoreBoard.textContent = "Player: "+ humanScore
+        computerScoreBoard.textContent = "computer " + computerScore
     }
     else if (humanChoice == "rock" && computerChoice == "Scissors") {
         resultBoard.textContent = "Rock beats Scissors! Human Wins!"
         humanScore = ++humanScore 
-        playerScoreBoard.textContent = humanScore
-        computerScoreBoard.textContent = computerScore
+        playerScoreBoard.textContent = "Player: "+ humanScore
+        computerScoreBoard.textContent = "computer " + computerScore
     }
     else if (humanChoice == "scissors" && computerChoice == "Paper") {
         resultBoard.textContent = "Scissors beats Paper! Human Wins!"
         humanScore = ++humanScore 
-        playerScoreBoard.textContent = humanScore
-        computerScoreBoard.textContent = computerScore
+        playerScoreBoard.textContent = "Player: "+ humanScore
+        computerScoreBoard.textContent = "computer " + computerScore
     }
     else if (humanChoice == "rock" && computerChoice == "Paper") {
         resultBoard.textContent = "Rock loses to Paper! Computer Wins!"
         computerScore = ++computerScore 
-        playerScoreBoard.textContent = humanScore
-        computerScoreBoard.textContent = computerScore
+        playerScoreBoard.textContent = "Player: "+ humanScore
+        computerScoreBoard.textContent = "computer " + computerScore
     }
     else if (humanChoice == "scissors" && computerChoice == "Rock") {
         resultBoard.textContent = "Scissors loses to Rock! Computer Wins!"
         computerScore = ++computerScore 
-        playerScoreBoard.textContent = humanScore
-        computerScoreBoard.textContent = computerScore
+        playerScoreBoard.textContent = "Player: "+ humanScore
+        computerScoreBoard.textContent = "computer " + computerScore
     }
     else if (humanChoice == "paper" && computerChoice == "Scissors") {
         resultBoard.textContent = "Paper loses to Scissors! Computer Wins!"
         computerScore = ++computerScore ;
-        playerScoreBoard.textContent = humanScore
-        computerScoreBoard.textContent = computerScore
+        playerScoreBoard.textContent = "Player: "+ humanScore
+        computerScoreBoard.textContent = "computer " + computerScore
     }
     else if (humanChoice == "paper" && computerChoice == "Paper" || humanChoice == "rock" && computerChoice == "Rock" || humanChoice == "scissors" && computerChoice == "Scissors") {
         resultBoard.textContent = "ITS A DRAW!"
-        playerScoreBoard.textContent = humanScore
-        computerScoreBoard.textContent = computerScore
+        playerScoreBoard.textContent = "Player: "+ humanScore
+        computerScoreBoard.textContent = "computer " + computerScore
     }
 } 
 
@@ -94,10 +94,23 @@ function playRound(humanChoice , computerChoice) {
 
 
 function playGame(btnChoice){
+    if (computerScore == 5) {
+    resultBoard.textContent = "COMPUTER WINS!"
+    scoreBox.appendChild(resultBoard)
+} 
+else if (humanScore == 5 ) {
+    resultBoard.textContent = "YOU WIN!"
+} 
+else {
+
     const humanSelection = getHumanChoice(btnChoice)
     const computerSelection = getComputerChoice()
+
     scoreBox.appendChild(playerScoreBoard)
     scoreBox.appendChild(computerScoreBoard)
     scoreBox.appendChild(resultBoard)
+    
     playRound(humanSelection , computerSelection)
+
+}
 }

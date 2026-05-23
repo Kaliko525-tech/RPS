@@ -164,4 +164,8 @@ else {
 
 }
 
+lets test this out. -> THIS WORKS! WOOHOO! PSEUDOCODE FOR THE WIN!
+
+although i did notice, for the winning output it only shows once i click a choice again, this could be more dynamic, that WHEN humanScore == 5 || computerScore == 5 it pushes the winner result and prevents further playing. 
+
 5. (BONUS?) add a reset button. 
