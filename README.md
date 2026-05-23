@@ -170,6 +170,10 @@ although i did notice, for the winning output it only shows once i click a choic
 
 okay so the issue above was because i had the code in the wrong order. the if else comes after the playRound, because we are only checking for the score AFTER the round as has played, The previous itteration had the if else first, which meant it would check the score first then play. So by doing it the other way round, the compiler plays the round, then at the end of the round if anyone score is 5 it would output the winner anouncement! 
 
+but now they carry on playing after a 5! i need to disable the btn. and then enable on reset! 
+
+
+
 5. (BONUS?) add a reset button. 
 
 yes just for fun, 
@@ -179,3 +183,6 @@ i think i just need it to remove appended children and reset score.
 so grab the button, add and event listener, create function that removes apended children and resets score. 
 
 this works! attempted to use remove() method, but did not work. removechild() did work. 
+
+
+6. bonus bonus - used some AI to help me with some bits, but it suggested some changes im not comfortable with right now so not going to implement it, i understand current code and am happy with it. the suggestion was to move my append child methods, i dont want to do that becasue this assignment is to show off DOM manipulation and my current code shows that very well. so i dont want to change it yet. 

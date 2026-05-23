@@ -4,13 +4,15 @@ let humanScore = 0
 let computerScore = 0
 
 const choiceRock = document.querySelector("#rock")
-choiceRock.addEventListener("click", () => playGame("rock"))
-
 const choicePaper = document.querySelector("#paper")
-choicePaper.addEventListener("click", () => playGame("paper"))
-
 const choiceScissors = document.querySelector("#scissors")
+
+choiceRock.addEventListener("click", () => playGame("rock"))
+choicePaper.addEventListener("click", () => playGame("paper"))
 choiceScissors.addEventListener("click", () => playGame("scissors"))
+
+const gameButtons = [choicePaper, choiceRock, choiceScissors]
+
 
 const scoreBox = document.querySelector(".scoreBox")
 
@@ -106,9 +108,12 @@ function playGame(btnChoice){
     if (computerScore == 5) {
     resultBoard.textContent = "COMPUTER WINS!"
     scoreBox.appendChild(resultBoard)
+    gameButtons.forEach(btn => btn.disabled = true)
 } 
 else if (humanScore == 5 ) {
     resultBoard.textContent = "YOU WIN!"
+    scoreBox.appendChild(resultBoard)
+    gameButtons.forEach(btn => btn.disabled = true)
 } 
 
 
@@ -125,4 +130,5 @@ resetBtn.addEventListener("click", () => {
     scoreBox.removeChild(resultBoard)
     computerScore = 0
     humanScore = 0
+    gameButtons.forEach(btn => btn.disabled = false)
 })
