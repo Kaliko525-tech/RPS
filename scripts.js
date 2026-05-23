@@ -94,15 +94,6 @@ function playRound(humanChoice , computerChoice) {
 
 
 function playGame(btnChoice){
-    if (computerScore == 5) {
-    resultBoard.textContent = "COMPUTER WINS!"
-    scoreBox.appendChild(resultBoard)
-} 
-else if (humanScore == 5 ) {
-    resultBoard.textContent = "YOU WIN!"
-} 
-else {
-
     const humanSelection = getHumanChoice(btnChoice)
     const computerSelection = getComputerChoice()
 
@@ -112,7 +103,18 @@ else {
     
     playRound(humanSelection , computerSelection)
 
-}
+    if (computerScore == 5) {
+    resultBoard.textContent = "COMPUTER WINS!"
+    scoreBox.appendChild(resultBoard)
+} 
+else if (humanScore == 5 ) {
+    resultBoard.textContent = "YOU WIN!"
+} 
+
+
+    
+
+
 }
 
 const resetBtn = document.querySelector("#reset")

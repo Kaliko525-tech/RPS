@@ -168,6 +168,8 @@ lets test this out. -> THIS WORKS! WOOHOO! PSEUDOCODE FOR THE WIN!
 
 although i did notice, for the winning output it only shows once i click a choice again, this could be more dynamic, that WHEN humanScore == 5 || computerScore == 5 it pushes the winner result and prevents further playing. 
 
+okay so the issue above was because i had the code in the wrong order. the if else comes after the playRound, because we are only checking for the score AFTER the round as has played, The previous itteration had the if else first, which meant it would check the score first then play. So by doing it the other way round, the compiler plays the round, then at the end of the round if anyone score is 5 it would output the winner anouncement! 
+
 5. (BONUS?) add a reset button. 
 
 yes just for fun, 
